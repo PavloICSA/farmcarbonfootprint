@@ -1,0 +1,9 @@
+export const NITROGEN_FACTOR = 6.3;
+export const PHOSPHORUS_FACTOR = 1.5;
+export const POTASSIUM_FACTOR = 1.0;
+export const MANURE_FACTOR = 0.6;
+export const DIESEL_FACTOR = 2.68;
+export const IRRIGATION_FACTOR = 0.5;
+export const COW_FACTOR = 1000.0;
+export const PIG_FACTOR = 200.0;
+export const CHICKEN_FACTOR = 5.0;

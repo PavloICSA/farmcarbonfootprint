@@ -1,0 +1,78 @@
+.emission-trend-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--surface, #f5f5f5);
+  border-radius: 8px;
+}
+
+.emission-trend-chart__base.chart-base {
+  background: var(--surface, #ffffff);
+}
+
+.emission-trend-chart--empty {
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--text-secondary, #666);
+}
+
+.et-axis path {
+  stroke: var(--line-strong, rgba(0, 0, 0, 0.45));
+  stroke-width: 1;
+  fill: none;
+}
+
+.et-grid {
+  stroke: var(--line-strong, rgba(0, 0, 0, 0.2));
+  stroke-width: 1;
+}
+
+.et-y-tick {
+  font-size: 13px;
+  fill: var(--text, #111);
+  font-weight: 600;
+}
+
+.et-axis-label {
+  font-size: 15px;
+  fill: var(--text, #111);
+  font-weight: 600;
+}
+
+.et-date {
+  font-size: 14px;
+  fill: var(--text, #111);
+  font-weight: 600;
+}
+
+.et-line {
+  fill: none;
+  stroke: var(--primary-2, #1f568a);
+  stroke-width: 3;
+}
+
+.et-trend {
+  fill: none;
+  stroke: color-mix(in oklab, var(--primary-2, #1f568a) 60%, transparent);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.et-point {
+  fill: var(--surface, #ffffff);
+  stroke: var(--primary-2, #1f568a);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.et-point--hovered {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .emission-trend-chart {
+    padding: 0.75rem;
+  }
+}

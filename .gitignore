@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/.vite/
+
+# PWA/Workbox caches
+**/dev-dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE and tool configs
+.vscode/
+.idea/
+.kiro/
+
+# Coverage
+coverage/
+
+# Misc
+*.tsbuildinfo

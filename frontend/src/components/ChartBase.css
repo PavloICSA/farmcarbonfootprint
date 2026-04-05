@@ -1,0 +1,223 @@
+/**
+ * ChartBase Styles
+ * 
+ * Provides base styling for all SVG charts including:
+ * - Responsive sizing
+ * - Loading and error states
+ * - Dark mode support
+ * - Print-friendly styles
+ * - Accessibility features
+ */
+
+.chart-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: var(--chart-bg, transparent);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.chart-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px 0 18px;
+}
+
+.chart-actions .ghost {
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+/* Loading State */
+.chart-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 300px;
+  color: var(--text-secondary, #666);
+  font-size: 0.875rem;
+}
+
+.chart-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--spinner-bg, #e0e0e0);
+  border-top-color: var(--spinner-color, #4a90e2);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.chart-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  min-height: 200px;
+  background: var(--error-bg, #fff3cd);
+  border: 1px solid var(--error-border, #ffc107);
+  border-radius: 6px;
+  color: var(--error-text, #856404);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.chart-error-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.chart-error-message {
+  flex: 1;
+}
+
+/* Responsive Sizing */
+@media (max-width: 768px) {
+  .chart-actions {
+    justify-content: flex-start;
+  }
+
+  .chart-base {
+    min-height: 150px;
+  }
+
+  .chart-loading {
+    min-height: 200px;
+  }
+
+  .chart-error {
+    min-height: 150px;
+    font-size: 0.8rem;
+  }
+
+  .chart-spinner {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-base {
+    min-height: 120px;
+  }
+
+  .chart-loading {
+    min-height: 150px;
+    gap: 0.5rem;
+  }
+
+  .chart-error {
+    min-height: 120px;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .chart-spinner {
+    width: 28px;
+    height: 28px;
+    border-width: 2px;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .chart-base {
+    background: var(--chart-bg, #1a1a1a);
+  }
+
+  .chart-loading {
+    color: var(--text-secondary, #aaa);
+  }
+
+  .chart-spinner {
+    border-color: var(--spinner-bg, #333);
+    border-top-color: var(--spinner-color, #4a90e2);
+  }
+
+  .chart-error {
+    background: var(--error-bg, #332701);
+    border-color: var(--error-border, #664d03);
+    color: var(--error-text, #ffecb5);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .chart-base {
+    border: 2px solid var(--border-color, #000);
+  }
+
+  .chart-svg {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  }
+
+  .chart-error {
+    border-width: 2px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .chart-base {
+    background: white;
+    border: none;
+    page-break-inside: avoid;
+  }
+
+  .chart-loading,
+  .chart-error {
+    display: none;
+  }
+
+  .chart-svg {
+    filter: none;
+  }
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Styles for Keyboard Navigation */
+.chart-base:focus-within {
+  outline: 2px solid var(--focus-color, #4a90e2);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .chart-spinner {
+    animation: none;
+    border-top-color: var(--spinner-color, #4a90e2);
+  }
+}

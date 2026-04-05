@@ -1,0 +1,304 @@
+/**
+ * ShareButton Component Styles
+ * 
+ * Styles for the share button and modal dialog
+ */
+
+.share-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary, #4ECDC4);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.share-button:hover {
+  background-color: var(--color-primary-dark, #3ba39c);
+}
+
+.share-button:active {
+  transform: scale(0.98);
+}
+
+.share-button:focus {
+  outline: 2px solid var(--color-focus, #45B7D1);
+  outline-offset: 2px;
+}
+
+/* Modal Overlay */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Dialog */
+.share-modal {
+  background-color: var(--color-bg, #ffffff);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.share-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+
+.share-modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text, #333);
+}
+
+.share-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text-secondary, #666);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.share-modal-close:hover {
+  background-color: var(--color-bg-hover, #f5f5f5);
+}
+
+.share-modal-close:focus {
+  outline: 2px solid var(--color-focus, #45B7D1);
+  outline-offset: 2px;
+}
+
+/* Modal Content */
+.share-modal-content {
+  padding: 1.5rem;
+}
+
+/* Error Message */
+.share-error {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #c33;
+  font-size: 0.9rem;
+}
+
+/* URL Info */
+.share-url-info {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--color-bg-secondary, #f9f9f9);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.share-url-info p {
+  margin: 0;
+  color: var(--color-text-secondary, #666);
+}
+
+/* URL Display */
+.share-url-display {
+  margin-bottom: 1.5rem;
+}
+
+.share-url-display label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-text, #333);
+  font-size: 0.9rem;
+}
+
+.share-url-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border, #ddd);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  background-color: var(--color-input-bg, #fafafa);
+  color: var(--color-text, #333);
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+.share-url-input:focus {
+  outline: 2px solid var(--color-focus, #45B7D1);
+  outline-offset: 0;
+  border-color: var(--color-focus, #45B7D1);
+}
+
+/* Modal Actions */
+.share-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.share-action-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.share-action-button.primary {
+  background-color: var(--color-primary, #4ECDC4);
+  color: white;
+}
+
+.share-action-button.primary:hover {
+  background-color: var(--color-primary-dark, #3ba39c);
+}
+
+.share-action-button.primary:focus {
+  outline: 2px solid var(--color-focus, #45B7D1);
+  outline-offset: 2px;
+}
+
+.share-action-button.secondary {
+  background-color: var(--color-bg-secondary, #f0f0f0);
+  color: var(--color-text, #333);
+  border: 1px solid var(--color-border, #ddd);
+}
+
+.share-action-button.secondary:hover {
+  background-color: var(--color-bg-hover, #e8e8e8);
+}
+
+.share-action-button.secondary:focus {
+  outline: 2px solid var(--color-focus, #45B7D1);
+  outline-offset: 2px;
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .share-modal {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .share-modal-header {
+  border-bottom-color: #444;
+}
+
+[data-theme="dark"] .share-modal-header h2 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .share-modal-close {
+  color: #999;
+}
+
+[data-theme="dark"] .share-modal-close:hover {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .share-url-info {
+  background-color: #333;
+}
+
+[data-theme="dark"] .share-url-info p {
+  color: #999;
+}
+
+[data-theme="dark"] .share-url-display label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .share-url-input {
+  background-color: #1a1a1a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .share-url-input:focus {
+  border-color: #45B7D1;
+}
+
+[data-theme="dark"] .share-action-button.secondary {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+[data-theme="dark"] .share-action-button.secondary:hover {
+  background-color: #3a3a3a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .share-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .share-modal-header {
+    padding: 1rem;
+  }
+
+  .share-modal-content {
+    padding: 1rem;
+  }
+
+  .share-modal-actions {
+    flex-direction: column;
+  }
+
+  .share-action-button {
+    width: 100%;
+  }
+}

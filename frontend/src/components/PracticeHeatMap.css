@@ -1,0 +1,114 @@
+.practice-heatmap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--surface, #f5f5f5);
+  border-radius: 8px;
+  --ph-text: var(--text, #111);
+  --ph-text-strong: var(--text-strong, #0d1b2a);
+  --ph-border: var(--line-strong, rgba(15, 29, 43, 0.35));
+  --ph-low: color-mix(in oklab, #00b894 85%, transparent);
+  --ph-medium: color-mix(in oklab, #f1b84c 85%, transparent);
+  --ph-high: color-mix(in oklab, #ff6b6b 85%, transparent);
+  --ph-selected: var(--primary-2, rgba(16, 77, 132, 0.95));
+  --ph-legend-bg: color-mix(in oklab, var(--surface, #f5f5f5) 86%, #ffffff);
+}
+
+.practice-heatmap__base.chart-base {
+  background: transparent;
+}
+
+.ph-label {
+  font-size: 15.5px;
+  fill: var(--ph-text-strong, #0d1b2a);
+  font-weight: 700;
+}
+
+.ph-desc {
+  font-size: 14px;
+  fill: var(--ph-text-strong, #0d1b2a);
+  font-weight: 600;
+}
+
+.ph-legend-text {
+  font-size: 13.5px;
+  fill: var(--ph-text-strong, #0d1b2a);
+  font-weight: 700;
+}
+
+.ph-legend-swatch {
+  stroke: var(--ph-border, rgba(0, 0, 0, 0.18));
+  stroke-width: 1;
+}
+
+.ph-legend-bg {
+  fill: var(--ph-legend-bg, rgba(255, 255, 255, 0.9));
+  stroke: var(--ph-border, rgba(0, 0, 0, 0.18));
+  stroke-width: 1;
+}
+
+.ph-cell {
+  stroke: var(--ph-border, rgba(0, 0, 0, 0.18));
+  stroke-width: 1;
+  cursor: pointer;
+  opacity: 0.95;
+}
+
+.ph-cell--low {
+  fill: var(--ph-low, rgba(0, 184, 148, 0.3));
+}
+
+.ph-cell--medium {
+  fill: var(--ph-medium, rgba(253, 203, 110, 0.34));
+}
+
+.ph-cell--high {
+  fill: var(--ph-high, rgba(255, 107, 107, 0.32));
+}
+
+.ph-cell--selected {
+  stroke: var(--ph-selected, rgba(31, 86, 138, 0.95));
+  stroke-width: 2;
+}
+
+.ph-cell--hovered {
+  filter: brightness(1.06);
+  opacity: 1;
+}
+
+.ph-cell-text {
+  font-size: 14px;
+  fill: var(--ph-text-strong, #0d1b2a);
+  font-weight: 700;
+  pointer-events: none;
+  paint-order: stroke fill;
+  stroke: rgba(13, 27, 42, 0.25);
+  stroke-width: 0.6px;
+}
+
+:root[data-theme="dark"] .practice-heatmap {
+  --ph-text: #e6f1ff;
+  --ph-text-strong: #ffffff;
+  --ph-border: rgba(170, 200, 230, 0.35);
+  --ph-low: color-mix(in oklab, #10d4a8 82%, transparent);
+  --ph-medium: color-mix(in oklab, #f1b84c 82%, transparent);
+  --ph-high: color-mix(in oklab, #ff6b6b 82%, transparent);
+}
+
+@media (prefers-contrast: more) {
+  .practice-heatmap {
+    --ph-text: #000000;
+    --ph-border: #000000;
+    --ph-low: rgba(0, 120, 95, 0.6);
+    --ph-medium: rgba(190, 120, 20, 0.6);
+    --ph-high: rgba(180, 40, 40, 0.6);
+    --ph-selected: #000000;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-heatmap {
+    padding: 0.75rem;
+  }
+}

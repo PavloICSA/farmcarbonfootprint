@@ -1,0 +1,21 @@
+{
+  "name": "carbon-footprint-web",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "frontend",
+    "shared/calculation-core"
+  ],
+  "scripts": {
+    "dev": "npm --workspace frontend run dev",
+    "build": "npm run build --workspaces"
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^14.6.1",
+    "identity-obj-proxy": "^3.0.0"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.0",
+    "jspdf-autotable": "^5.0.7"
+  }
+}

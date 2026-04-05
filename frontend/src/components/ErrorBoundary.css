@@ -1,0 +1,133 @@
+/* Error Boundary Styles */
+
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem;
+  background: var(--panel-bg);
+  border-radius: 8px;
+  border: 2px solid var(--error-color, #ef4444);
+}
+
+.error-boundary-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-boundary-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.error-boundary-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.error-boundary-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.error-boundary-section {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary, rgba(0, 0, 0, 0.1));
+  border-radius: 6px;
+}
+
+.error-boundary-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.error-boundary-details {
+  padding: 0.75rem;
+  background: var(--bg-tertiary, rgba(0, 0, 0, 0.2));
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.error-boundary-details code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  color: var(--error-color, #ef4444);
+  word-break: break-word;
+}
+
+.error-boundary-actions-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.error-boundary-actions-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.error-boundary-note {
+  font-size: 0.875rem;
+  color: var(--success-color, #10b981);
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+
+.error-boundary-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.error-boundary-buttons button {
+  min-width: 120px;
+}
+
+.error-boundary-footer {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .error-boundary {
+    padding: 1rem;
+    min-height: 250px;
+  }
+
+  .error-boundary-content {
+    max-width: 100%;
+  }
+
+  .error-boundary-title {
+    font-size: 1.25rem;
+  }
+
+  .error-boundary-buttons {
+    flex-direction: column;
+  }
+
+  .error-boundary-buttons button {
+    width: 100%;
+  }
+}

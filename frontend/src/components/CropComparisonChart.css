@@ -1,0 +1,73 @@
+.crop-comparison-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary, #f5f5f5);
+  border-radius: 8px;
+}
+
+.crop-comparison-chart__base.chart-base {
+  background: transparent;
+}
+
+.crop-comparison-chart--empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-secondary, #666);
+}
+
+.cc-axis path {
+  stroke: rgba(0, 0, 0, 0.45);
+  stroke-width: 1;
+  fill: none;
+}
+
+.cc-grid {
+  stroke: rgba(0, 0, 0, 0.08);
+  stroke-width: 1;
+}
+
+.cc-tick {
+  font-size: 11px;
+  fill: var(--text-secondary, #666);
+}
+
+.cc-axis-label {
+  font-size: 12px;
+  fill: var(--text-secondary, #666);
+}
+
+.cc-crop-label {
+  font-size: 12px;
+  fill: var(--text, #111);
+}
+
+.cc-seg {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: opacity 120ms ease, filter 120ms ease;
+}
+
+.cc-seg:hover,
+.cc-seg:focus {
+  opacity: 1;
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.cc-seg--hovered {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+@media (max-width: 480px) {
+  .crop-comparison-chart {
+    padding: 0.75rem;
+  }
+
+  .cc-crop-label {
+    font-size: 10px;
+  }
+}
+

@@ -1,0 +1,213 @@
+/**
+ * ValidationTooltip Styles
+ * 
+ * Styles for inline validation error and warning messages
+ */
+
+/* Tooltip container */
+.validation-tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 300px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Error tooltip */
+.validation-tooltip--error {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+}
+
+[data-theme="dark"] .validation-tooltip--error {
+  background-color: #4a1f1f;
+  border-color: #7a2f2f;
+  color: #ffaaaa;
+}
+
+/* Warning tooltip */
+.validation-tooltip--warning {
+  background-color: #fffbea;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+[data-theme="dark"] .validation-tooltip--warning {
+  background-color: #3a3520;
+  border-color: #5a5530;
+  color: #ffd966;
+}
+
+/* Positioning */
+.validation-tooltip--bottom {
+  top: calc(100% + 0.25rem);
+  left: 0;
+}
+
+.validation-tooltip--top {
+  bottom: calc(100% + 0.25rem);
+  left: 0;
+}
+
+.validation-tooltip--right {
+  left: calc(100% + 0.5rem);
+  top: 0;
+}
+
+.validation-tooltip--left {
+  right: calc(100% + 0.5rem);
+  top: 0;
+}
+
+/* Tooltip content */
+.validation-tooltip__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Message container */
+.validation-tooltip__message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Icon */
+.validation-tooltip__icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Text */
+.validation-tooltip__text {
+  flex: 1;
+}
+
+/* Errors section */
+.validation-tooltip__errors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Warnings section */
+.validation-tooltip__warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .validation-tooltip__warnings {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inline validation message (simpler alternative) */
+.validation-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Error message */
+.validation-message--error {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+}
+
+[data-theme="dark"] .validation-message--error {
+  background-color: #4a1f1f;
+  border-color: #7a2f2f;
+  color: #ffaaaa;
+}
+
+/* Warning message */
+.validation-message--warning {
+  background-color: #fffbea;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+[data-theme="dark"] .validation-message--warning {
+  background-color: #3a3520;
+  border-color: #5a5530;
+  color: #ffd966;
+}
+
+/* Message icon */
+.validation-message__icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* Message text */
+.validation-message__text {
+  flex: 1;
+}
+
+/* Field wrapper with validation */
+.field--has-error input,
+.field--has-error select,
+.field--has-error textarea {
+  border-color: #c33;
+}
+
+[data-theme="dark"] .field--has-error input,
+[data-theme="dark"] .field--has-error select,
+[data-theme="dark"] .field--has-error textarea {
+  border-color: #ff6b6b;
+}
+
+.field--has-warning input,
+.field--has-warning select,
+.field--has-warning textarea {
+  border-color: #ffeaa7;
+}
+
+[data-theme="dark"] .field--has-warning input,
+[data-theme="dark"] .field--has-warning select,
+[data-theme="dark"] .field--has-warning textarea {
+  border-color: #ffd966;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .validation-tooltip {
+    max-width: 250px;
+    font-size: 0.8125rem;
+  }
+
+  .validation-tooltip--right,
+  .validation-tooltip--left {
+    /* On mobile, always show below */
+    position: static;
+    margin-top: 0.25rem;
+  }
+}
